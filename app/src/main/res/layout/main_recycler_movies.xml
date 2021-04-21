@@ -3,24 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="95dp"
-    android:layout_margin="2dp">
+    android:layout_height="120dp"
+    android:layout_margin="2dp"
+    android:background="@color/black" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="Titulo Filme"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/card_view_movie"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:id="@+id/recycler_titulo_filme"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ano filme"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/card_view_movie"
         app:layout_constraintTop_toBottomOf="@+id/recycler_titulo_filme"
         android:layout_marginStart="20dp"
@@ -31,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Genero"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/recycler_ano_filme"
         app:layout_constraintTop_toBottomOf="@+id/recycler_titulo_filme"
         android:layout_marginStart="20dp"
@@ -42,16 +45,17 @@
         android:layout_height="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/ButtomTheme"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/ic_check_mark" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_movie"
-        android:layout_width="100dp"
+        android:layout_width="67dp"
         app:cardCornerRadius="5dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"

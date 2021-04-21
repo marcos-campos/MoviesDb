@@ -9,7 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
+import com.example.moviesdb.ui.main.adapter.AdapterFilmesSemelhantes
+import com.example.moviesdb.ui.main.model.Movie
+import com.example.moviesdb.ui.main.modelMovieSimilar.Result
 import com.squareup.picasso.Picasso
 
 class MainFragment : Fragment() {
@@ -20,6 +25,9 @@ class MainFragment : Fragment() {
     val likesFilmes by lazy { view?.findViewById<TextView>(R.id.tv_note) }
     val coracaoVazio by lazy {view?.findViewById<ImageView>(R.id.coracao_vazio)}
     val coracaoPreenchido by lazy {view?.findViewById<ImageView>(R.id.coracao_preenchido)}
+
+    val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}
+    private var listaFilmeSimilar = mutableListOf<Result>()
 
     companion object {
         fun newInstance() = MainFragment()
@@ -34,6 +42,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         viewModel.buscarFilmesCoroutines()
@@ -49,6 +58,19 @@ class MainFragment : Fragment() {
             Picasso.with(activity).load(baseUrlImage + tamanhoImage + it.posterPath).fit().into(imagemFilme)
 
             setClickListeners()
+
+        })
+
+        recycler?.layoutManager = LinearLayoutManager(activity)
+
+        viewModel.buscarFilmesSemelhantesCoroutines()
+        viewModel.movieSimilarLiveData.observe(this, Observer {
+            listaFilmeSimilar.addAll(it)
+
+            val adapter = activity?.let { AdapterFilmesSemelhantes(listaFilmeSimilar, it) }
+            recycler?.adapter = adapter
+
+            adapter?.notifyDataSetChanged()
 
         })
 

@@ -13,38 +13,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/iv_filme" />
-    <View
-        android:id="@+id/opacityFilter1"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:background="@android:color/black"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_filme"
-        android:alpha="0.3"/>
-
-    <View
-        android:id="@+id/opacityFilter2"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:background="@android:color/black"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/opacityFilter1"
-        android:alpha="0.2"/>
-
-    <View
-        android:id="@+id/opacityFilter3"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:background="@android:color/black"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/opacityFilter2"
-        android:alpha="0.1"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -139,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:id="@+id/recycler_main"
         app:layout_constraintTop_toBottomOf="@id/tv_views"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
