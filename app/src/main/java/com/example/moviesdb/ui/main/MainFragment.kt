@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +31,9 @@ class MainFragment : Fragment() {
     val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}
     private var listaFilmeSimilar = mutableListOf<Result>()
 
+    lateinit var progressBarFilmes : ProgressBar
+    lateinit var progressBarFilmesSemelhantes : ProgressBar
+
     companion object {
         fun newInstance() = MainFragment()
     }
@@ -44,6 +49,9 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        progressBarFilmes = view!!.findViewById<ProgressBar>(R.id.progress_bar_filmes)
+        progressBarFilmesSemelhantes = view!!.findViewById<ProgressBar>(R.id.progress_bar_filmes_semelhantes)
 
         viewModel.buscarFilmesCoroutines()
         viewModel.movieLiveData.observe(this, Observer {
@@ -72,6 +80,26 @@ class MainFragment : Fragment() {
 
             adapter?.notifyDataSetChanged()
 
+        })
+
+        viewModel.loadingFilmes.observe(this, Observer {
+            if (it) {
+                progressBarFilmes.visibility = View.VISIBLE
+            } else {
+                progressBarFilmes.visibility = View.GONE
+            }
+        })
+
+        viewModel.loadingFilmesSemelhantes.observe(this, Observer {
+            if (it) {
+                progressBarFilmesSemelhantes.visibility = View.VISIBLE
+            } else {
+                progressBarFilmesSemelhantes.visibility = View.GONE
+            }
+        })
+
+        viewModel.errorMessage.observe(this, Observer {
+            Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
         })
 
     }
