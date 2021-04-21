@@ -1,5 +1,6 @@
 package com.example.moviesdb.ui.main.network
 
+import com.example.moviesdb.ui.main.model.GenresResponse
 import com.example.moviesdb.ui.main.model.Movie
 import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
 import com.example.moviesdb.ui.main.modelMovieSimilar.Result
@@ -17,5 +18,9 @@ interface EndPoints {
     suspend fun buscarFilmesSemelhantes(
             @Path("movie_id") movie_id: Int
     ): MovieSimilar
+
+    @GET("genre/movie/list")
+    suspend fun buscarGeneros(
+    ): GenresResponse
 
 }

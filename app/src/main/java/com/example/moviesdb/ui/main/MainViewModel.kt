@@ -2,6 +2,7 @@ package com.example.moviesdb.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.moviesdb.ui.main.model.GenresResponse
 import com.example.moviesdb.ui.main.model.Movie
 import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
 import com.example.moviesdb.ui.main.modelMovieSimilar.Result
@@ -15,6 +16,7 @@ import java.net.UnknownHostException
 class MainViewModel : ViewModel() {
 
     val movieLiveData = MutableLiveData<Movie>()
+    val genresLiveData = MutableLiveData<GenresResponse>()
     val movieSimilarLiveData = MutableLiveData<ArrayList<Result>>()
     val repository = RepositoryApi()
     val loadingFilmes = MutableLiveData<Boolean>()
@@ -50,6 +52,21 @@ class MainViewModel : ViewModel() {
 
             catch (error: Throwable) {
                 loadingFilmesSemelhantes.postValue(false)
+                enviarErro(error)
+            }
+        }
+    }
+
+    fun buscarGenerosCoroutines(){
+        CoroutineScope(Dispatchers.IO).launch {
+
+            try {
+                repository.buscarGenerosApi().let {
+                    genresLiveData.postValue(it)
+                }
+            }
+
+            catch (error: Throwable) {
                 enviarErro(error)
             }
         }

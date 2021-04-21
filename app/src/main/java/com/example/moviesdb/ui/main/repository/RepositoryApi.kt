@@ -1,5 +1,6 @@
 package com.example.moviesdb.ui.main.repository
 
+import com.example.moviesdb.ui.main.model.GenresResponse
 import com.example.moviesdb.ui.main.model.Movie
 import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
 import com.example.moviesdb.ui.main.modelMovieSimilar.Result
@@ -19,5 +20,8 @@ class RepositoryApi {
     private val conectionService = RetrofitInit(url).create(service)
 
     suspend fun buscarFilmeApi(): Movie = conectionService.buscarFilmes(200)
+
     suspend fun buscarFilmesSemelhantesApi(): MovieSimilar = conectionService.buscarFilmesSemelhantes(200)
+
+    suspend fun buscarGenerosApi(): GenresResponse = conectionService.buscarGeneros()
 }

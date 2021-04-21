@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
 import com.example.moviesdb.ui.main.adapter.AdapterFilmesSemelhantes
+import com.example.moviesdb.ui.main.model.Genre
 import com.example.moviesdb.ui.main.model.Movie
 import com.example.moviesdb.ui.main.modelMovieSimilar.Result
 import com.squareup.picasso.Picasso
@@ -30,6 +31,8 @@ class MainFragment : Fragment() {
 
     val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}
     private var listaFilmeSimilar = mutableListOf<Result>()
+
+    private var listaGeneros = mutableListOf<Genre>()
 
     lateinit var progressBarFilmes : ProgressBar
     lateinit var progressBarFilmesSemelhantes : ProgressBar
@@ -71,11 +74,17 @@ class MainFragment : Fragment() {
 
         recycler?.layoutManager = LinearLayoutManager(activity)
 
-        viewModel.buscarFilmesSemelhantesCoroutines()
+        viewModel.buscarGenerosCoroutines()
+        viewModel.genresLiveData.observe(this, Observer {
+            listaGeneros.addAll(it.listaGeneros)
+
+            viewModel.buscarFilmesSemelhantesCoroutines()
+        })
+
         viewModel.movieSimilarLiveData.observe(this, Observer {
             listaFilmeSimilar.addAll(it)
 
-            val adapter = activity?.let { AdapterFilmesSemelhantes(listaFilmeSimilar, it) }
+            val adapter = activity?.let { AdapterFilmesSemelhantes(listaFilmeSimilar, it, listaGeneros) }
             recycler?.adapter = adapter
 
             adapter?.notifyDataSetChanged()
