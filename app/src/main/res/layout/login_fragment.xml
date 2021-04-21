@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/capa02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:paddingStart="15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:id="@+id/et_user"
+        android:hint="Endereço de e-mail"
+        android:textSize="14dp"
+        android:fontFamily="monospace"
+        android:textColor="@android:color/darker_gray"
+        android:background="@drawable/custom_layout"
+        android:imeOptions="actionNext"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:paddingStart="15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_user"
+        android:id="@+id/et_password"
+        android:background="@drawable/custom_layout"
+        android:hint="Senha"
+        android:fontFamily="monospace"
+        android:textSize="14dp"
+        android:textColor="@android:color/darker_gray"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        app:passwordToggleEnabled="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Esqueceu a senha?"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="86dp"
+        android:backgroundTint="@color/purple_700"
+        android:clickable="true"
+        android:text="Entrar"
+        android:fontFamily="monospace"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
