@@ -17,16 +17,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/opacityFilter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.6"/>
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/iv_front_image"
+        android:src="@drawable/people"
+        android:layout_marginTop="130dp"/>
+
     <EditText
         android:layout_width="match_parent"
         android:paddingStart="15dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="17dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_principal"
+        app:layout_constraintTop_toBottomOf="@+id/iv_front_image"
         android:id="@+id/et_usuario"
         android:hint="Endereço de e-mail"
         android:textSize="14dp"
