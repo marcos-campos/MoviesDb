@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="26dp"
         android:fontFamily="monospace"
+        android:id="@+id/animation_id"
         app:layout_constraintTop_toBottomOf="@id/animation_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,9 +22,9 @@ class MainFragment : Fragment() {
     val tituloFilme by lazy {view?.findViewById<TextView>(R.id.tv_titulo)}
     val imagemFilme by lazy { view?.findViewById<ImageView>(R.id.iv_filme) }
     val viewsFilme by lazy { view?.findViewById<TextView>(R.id.tv_likes) }
-    val likesFilmes by lazy { view?.findViewById<TextView>(R.id.tv_note) }
-    val coracaoVazio by lazy {view?.findViewById<ImageView>(R.id.coracao_vazio)}
-    val coracaoPreenchido by lazy {view?.findViewById<ImageView>(R.id.coracao_preenchido)}
+    val likesFilmes by lazy { view?.findViewById<TextView>(R.id.tv_visualizacoes) }
+    val coracaoVazio by lazy {view?.findViewById<ImageView>(R.id.iv_coracao)}
+    val coracaoPreenchido by lazy {view?.findViewById<ImageView>(R.id.iv_coracao_preenchido)}
     val botaoRetornar by lazy {view?.findViewById<Button>(R.id.btn_retornar)}
 
     val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}

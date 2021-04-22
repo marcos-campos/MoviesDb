@@ -11,6 +11,6 @@ class ViewHolderFilmesSemelhantes (view: View) : RecyclerView.ViewHolder(view) {
     val nomeDoFilme by lazy { view.findViewById<TextView>(R.id.recycler_titulo_filme) }
     val anoDoFilme by lazy { view.findViewById<TextView>(R.id.recycler_ano_filme) }
     val generoDoFilme by lazy { view.findViewById<TextView>(R.id.recycler_genero_filme) }
-    val imagemDoFilme by lazy { view.findViewById<ImageView>(R.id.recycler_imagem_movie) }
+    val imagemDoFilme by lazy { view.findViewById<ImageView>(R.id.recycler_imagem_filme) }
 
 }

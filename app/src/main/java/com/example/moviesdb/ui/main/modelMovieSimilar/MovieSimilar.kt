@@ -3,6 +3,7 @@ package com.example.moviesdb.ui.main.modelMovieSimilar
 import com.google.gson.annotations.SerializedName
 
 data class MovieSimilar(
+
         @SerializedName("page")
     val page: Int?,
 

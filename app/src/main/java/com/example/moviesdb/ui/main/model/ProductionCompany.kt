@@ -1,8 +1,18 @@
 package com.example.moviesdb.ui.main.model
 
+import com.google.gson.annotations.SerializedName
+
 data class ProductionCompany(
+
+        @SerializedName("id")
     val id: Int?,
-    val logo_path: String?,
+
+        @SerializedName("logo_path")
+    val logoPath: String?,
+
+        @SerializedName("name")
     val name: String?,
-    val origin_country: String?
+
+        @SerializedName("origin_country")
+    val originCountry: String?
 )

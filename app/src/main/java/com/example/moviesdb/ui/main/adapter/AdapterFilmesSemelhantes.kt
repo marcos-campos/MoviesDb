@@ -41,21 +41,21 @@ class AdapterFilmesSemelhantes(
         val segundoGenero = listaFilmesSemelhantes[position].genreIds?.get(1) ?: 0
 
 
-        val x = listaGeneros.firstOrNull {
+        val firstGenre = listaGeneros.firstOrNull {
             it.id == primeiroGenero
         }
 
-        val y = listaGeneros.firstOrNull {
+        val secondGenre = listaGeneros.firstOrNull {
             it.id == segundoGenero
         }
 
-        x?.let {x ->
+        firstGenre?.let {genero1 ->
 
             val generoFilmeSemelhante = holder.generoDoFilme
-            generoFilmeSemelhante.text = x.name
+            generoFilmeSemelhante.text = genero1.name
 
-            y?.let {y ->
-                generoFilmeSemelhante.text = x.name + ", " + y.name
+            secondGenre?.let {genero2 ->
+                generoFilmeSemelhante.text = genero1.name + ", " + genero2.name
             }
 
         }
