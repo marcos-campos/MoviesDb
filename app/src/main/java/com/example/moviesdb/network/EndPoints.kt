@@ -2,7 +2,7 @@ package com.example.moviesdb.network
 
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
-import com.example.moviesdb.modelMovieSimilar.MovieSimilar
+import com.example.moviesdb.model.MovieSimilar
 import retrofit2.http.GET
 import retrofit2.http.Path
 

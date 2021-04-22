@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
 import com.example.moviesdb.adapter.AdapterFilmesSemelhantes
 import com.example.moviesdb.model.Genre
-import com.example.moviesdb.modelMovieSimilar.Result
+import com.example.moviesdb.model.MovieSimilarResponse
 import com.squareup.picasso.Picasso
 
 class MainFragment : Fragment() {
@@ -27,7 +27,7 @@ class MainFragment : Fragment() {
     val botaoRetornar by lazy {view?.findViewById<Button>(R.id.btn_retornar)}
 
     val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}
-    private var listaFilmeSimilar = mutableListOf<Result>()
+    private var listaFilmeSimilar = mutableListOf<MovieSimilarResponse>()
 
     private var listaGeneros = mutableListOf<Genre>()
 

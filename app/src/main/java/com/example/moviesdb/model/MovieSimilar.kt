@@ -1,4 +1,4 @@
-package com.example.moviesdb.modelMovieSimilar
+package com.example.moviesdb.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -8,7 +8,7 @@ data class MovieSimilar(
     val page: Int?,
 
         @SerializedName("results")
-    val results: List<Result>?,
+    val results: List<MovieSimilarResponse>?,
 
         @SerializedName("total_pages")
     val totalPages: Int?,

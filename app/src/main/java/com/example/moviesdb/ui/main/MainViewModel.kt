@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
-import com.example.moviesdb.modelMovieSimilar.Result
+import com.example.moviesdb.model.MovieSimilarResponse
 import com.example.moviesdb.repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ class MainViewModel : ViewModel() {
 
     val movieLiveData = MutableLiveData<Movie>()
     val genresLiveData = MutableLiveData<GenresResponse>()
-    val movieSimilarLiveData = MutableLiveData<ArrayList<Result>>()
+    val movieSimilarLiveData = MutableLiveData<ArrayList<MovieSimilarResponse>>()
     val repository = RepositoryApi()
     val loadingFilmes = MutableLiveData<Boolean>()
     val loadingFilmesSemelhantes = MutableLiveData<Boolean>()
@@ -44,7 +44,7 @@ class MainViewModel : ViewModel() {
 
             try {
                 repository.buscarFilmesSemelhantesApi().let {
-                    movieSimilarLiveData.postValue((it.results as ArrayList<Result>?)!!)
+                    movieSimilarLiveData.postValue((it.results as ArrayList<MovieSimilarResponse>?)!!)
                     loadingFilmesSemelhantes.postValue(false) }
             }
 

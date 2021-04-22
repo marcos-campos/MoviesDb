@@ -2,7 +2,7 @@ package com.example.moviesdb.repository
 
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
-import com.example.moviesdb.modelMovieSimilar.MovieSimilar
+import com.example.moviesdb.model.MovieSimilar
 import com.example.moviesdb.network.EndPoints
 import com.example.moviesdb.network.RetrofitInit
 

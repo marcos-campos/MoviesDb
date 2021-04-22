@@ -1,8 +1,8 @@
-package com.example.moviesdb.modelMovieSimilar
+package com.example.moviesdb.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class MovieSimilarResponse(
 
         @SerializedName("adult")
     val adult: Boolean?,

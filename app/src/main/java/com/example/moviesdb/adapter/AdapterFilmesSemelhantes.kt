@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
 import com.example.moviesdb.model.Genre
-import com.example.moviesdb.modelMovieSimilar.Result
+import com.example.moviesdb.model.MovieSimilarResponse
 import com.squareup.picasso.Picasso
 import java.time.LocalDate
 
 class AdapterFilmesSemelhantes(
-        private val listaFilmesSemelhantes: MutableList<Result>,
+        private val listaFilmesSemelhantes: MutableList<MovieSimilarResponse>,
         private val context: Context,
         private val listaGeneros: MutableList<Genre>
         ): RecyclerView.Adapter<ViewHolderFilmesSemelhantes>() {
