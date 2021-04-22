@@ -104,6 +104,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
+        android:id="@+id/btn_retornar"
         android:background="@drawable/back_icon"
         android:theme="@style/ButtomTheme"
         app:layout_constraintStart_toStartOf="parent"

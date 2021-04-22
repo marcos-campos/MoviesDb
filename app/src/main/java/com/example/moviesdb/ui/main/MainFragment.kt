@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +25,7 @@ class MainFragment : Fragment() {
     val likesFilmes by lazy { view?.findViewById<TextView>(R.id.tv_note) }
     val coracaoVazio by lazy {view?.findViewById<ImageView>(R.id.coracao_vazio)}
     val coracaoPreenchido by lazy {view?.findViewById<ImageView>(R.id.coracao_preenchido)}
+    val botaoRetornar by lazy {view?.findViewById<Button>(R.id.btn_retornar)}
 
     val recycler by lazy {view?.findViewById<RecyclerView>(R.id.recycler_main)}
     private var listaFilmeSimilar = mutableListOf<Result>()
@@ -55,6 +53,10 @@ class MainFragment : Fragment() {
 
         progressBarFilmes = view!!.findViewById<ProgressBar>(R.id.progress_bar_filmes)
         progressBarFilmesSemelhantes = view!!.findViewById<ProgressBar>(R.id.progress_bar_filmes_semelhantes)
+
+        botaoRetornar?.setOnClickListener {
+            activity?.onBackPressed()
+        }
 
         viewModel.buscarFilmesCoroutines()
         viewModel.movieLiveData.observe(this, Observer {
