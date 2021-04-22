@@ -53,9 +53,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_movie"
-        android:layout_width="67dp"
+        android:layout_width="66dp"
         app:cardCornerRadius="5dp"
-        android:layout_height="100dp"
+        android:layout_height="99dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
@@ -78,6 +78,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:foregroundGravity="center"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
 
