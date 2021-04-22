@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.login
+package com.example.moviesdb.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.moviesdb.MainActivity
 import com.example.moviesdb.R
-import com.example.moviesdb.ui.main.MainFragment
 import com.example.moviesdb.ui.main.MainViewModel
 
 

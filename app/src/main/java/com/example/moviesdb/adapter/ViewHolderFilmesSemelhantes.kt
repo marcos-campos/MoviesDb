@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.main.adapter
+package com.example.moviesdb.adapter
 
 import android.view.View
 import android.widget.ImageView

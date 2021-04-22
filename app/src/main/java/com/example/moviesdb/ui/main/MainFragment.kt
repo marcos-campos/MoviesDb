@@ -11,10 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
-import com.example.moviesdb.ui.main.adapter.AdapterFilmesSemelhantes
-import com.example.moviesdb.ui.main.model.Genre
-import com.example.moviesdb.ui.main.model.Movie
-import com.example.moviesdb.ui.main.modelMovieSimilar.Result
+import com.example.moviesdb.adapter.AdapterFilmesSemelhantes
+import com.example.moviesdb.model.Genre
+import com.example.moviesdb.modelMovieSimilar.Result
 import com.squareup.picasso.Picasso
 
 class MainFragment : Fragment() {

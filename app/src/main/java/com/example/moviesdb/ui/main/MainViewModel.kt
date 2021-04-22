@@ -2,15 +2,13 @@ package com.example.moviesdb.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviesdb.ui.main.model.GenresResponse
-import com.example.moviesdb.ui.main.model.Movie
-import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
-import com.example.moviesdb.ui.main.modelMovieSimilar.Result
-import com.example.moviesdb.ui.main.repository.RepositoryApi
+import com.example.moviesdb.model.GenresResponse
+import com.example.moviesdb.model.Movie
+import com.example.moviesdb.modelMovieSimilar.Result
+import com.example.moviesdb.repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 import java.net.UnknownHostException
 
 class MainViewModel : ViewModel() {

@@ -1,11 +1,8 @@
-package com.example.moviesdb.ui.main.network
+package com.example.moviesdb.network
 
-import com.example.moviesdb.ui.main.repository.RepositoryApi
+import com.example.moviesdb.repository.RepositoryApi
 import okhttp3.*
-import okhttp3.logging.HttpLoggingInterceptor
 import java.io.IOException
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 class ApiKeyInterceptor: Interceptor {
 

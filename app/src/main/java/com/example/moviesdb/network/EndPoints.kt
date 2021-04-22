@@ -1,9 +1,8 @@
-package com.example.moviesdb.ui.main.network
+package com.example.moviesdb.network
 
-import com.example.moviesdb.ui.main.model.GenresResponse
-import com.example.moviesdb.ui.main.model.Movie
-import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
-import com.example.moviesdb.ui.main.modelMovieSimilar.Result
+import com.example.moviesdb.model.GenresResponse
+import com.example.moviesdb.model.Movie
+import com.example.moviesdb.modelMovieSimilar.MovieSimilar
 import retrofit2.http.GET
 import retrofit2.http.Path
 

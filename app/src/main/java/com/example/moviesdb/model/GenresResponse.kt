@@ -1,5 +1,6 @@
-package com.example.moviesdb.ui.main.model
+package com.example.moviesdb.model
 
+import com.example.moviesdb.model.Genre
 import com.google.gson.annotations.SerializedName
 
 data class GenresResponse (

@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.main.adapter
+package com.example.moviesdb.adapter
 
 import android.content.Context
 import android.os.Build
@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
-import com.example.moviesdb.ui.main.model.Genre
-import com.example.moviesdb.ui.main.model.Movie
-import com.example.moviesdb.ui.main.modelMovieSimilar.Result
+import com.example.moviesdb.model.Genre
+import com.example.moviesdb.modelMovieSimilar.Result
 import com.squareup.picasso.Picasso
 import java.time.LocalDate
 

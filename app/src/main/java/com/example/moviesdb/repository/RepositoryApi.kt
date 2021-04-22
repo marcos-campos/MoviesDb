@@ -1,11 +1,10 @@
-package com.example.moviesdb.ui.main.repository
+package com.example.moviesdb.repository
 
-import com.example.moviesdb.ui.main.model.GenresResponse
-import com.example.moviesdb.ui.main.model.Movie
-import com.example.moviesdb.ui.main.modelMovieSimilar.MovieSimilar
-import com.example.moviesdb.ui.main.modelMovieSimilar.Result
-import com.example.moviesdb.ui.main.network.EndPoints
-import com.example.moviesdb.ui.main.network.RetrofitInit
+import com.example.moviesdb.model.GenresResponse
+import com.example.moviesdb.model.Movie
+import com.example.moviesdb.modelMovieSimilar.MovieSimilar
+import com.example.moviesdb.network.EndPoints
+import com.example.moviesdb.network.RetrofitInit
 
 class RepositoryApi {
 
