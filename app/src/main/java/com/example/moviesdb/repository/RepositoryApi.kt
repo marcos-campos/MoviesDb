@@ -1,8 +1,11 @@
 package com.example.moviesdb.repository
 
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
 import com.example.moviesdb.model.MovieSimilar
+import com.example.moviesdb.modelListaFilmes.Item
+import com.example.moviesdb.modelListaFilmes.ListaFilmes
 import com.example.moviesdb.network.EndPoints
 import com.example.moviesdb.network.RetrofitInit
 
@@ -18,9 +21,13 @@ class RepositoryApi {
 
     private val conectionService = RetrofitInit(url).create(service)
 
-    suspend fun buscarFilmeApi(): Movie = conectionService.buscarFilmes(200)
+    suspend fun buscarFilmeApi(idFilme: Int): Movie = conectionService.buscarFilmes(idFilme)
 
-    suspend fun buscarFilmesSemelhantesApi(): MovieSimilar = conectionService.buscarFilmesSemelhantes(200)
+    suspend fun buscarFilmesSemelhantesApi(idFilme: Int): MovieSimilar = conectionService.buscarFilmesSemelhantes(idFilme)
 
     suspend fun buscarGenerosApi(): GenresResponse = conectionService.buscarGeneros()
+
+    suspend fun buscarListaDeFilmesApi(): ListaFilmes = conectionService.buscarListaDeFilmes(1)
 }
+
+

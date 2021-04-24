@@ -59,11 +59,10 @@ class AdapterFilmesSemelhantes(
 
         }
 
-
         val baseUrl = "https://image.tmdb.org/t/p/"
         val tamanhoImage = "w500/"
 
         val imagemFilmeSemelhante = holder.imagemDoFilme
-        Picasso.with(context).load(baseUrl + tamanhoImage + listaFilmesSemelhantes[position].posterPath).into(imagemFilmeSemelhante)
+        Picasso.with(context).load(baseUrl + tamanhoImage + listaFilmesSemelhantes[position].posterPath).fit().centerCrop().into(imagemFilmeSemelhante)
     }
 }

@@ -16,8 +16,8 @@ import com.example.moviesdb.model.Genre
 import com.example.moviesdb.model.MovieSimilarResponse
 import com.squareup.picasso.Picasso
 
-class MainFragment : Fragment() {
-    
+class MainFragment(private val idFilme: Int) : Fragment() {
+
     val tituloFilme by lazy {view?.findViewById<TextView>(R.id.tv_titulo)}
     val imagemFilme by lazy { view?.findViewById<ImageView>(R.id.iv_filme) }
     val viewsFilme by lazy { view?.findViewById<TextView>(R.id.tv_likes) }
@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
     lateinit var progressBarFilmesSemelhantes : ProgressBar
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance(idFilme: Int) = MainFragment(idFilme)
     }
 
     private lateinit var viewModel: MainViewModel
@@ -57,7 +57,7 @@ class MainFragment : Fragment() {
             activity?.onBackPressed()
         }
 
-        viewModel.buscarFilmesCoroutines()
+        viewModel.buscarFilmesCoroutines(idFilme)
         viewModel.movieLiveData.observe(this, Observer {
 
             val baseUrlImage = "https://image.tmdb.org/t/p/"
@@ -79,7 +79,7 @@ class MainFragment : Fragment() {
         viewModel.genresLiveData.observe(this, Observer {
             listaGeneros.addAll(it.listaGeneros)
 
-            viewModel.buscarFilmesSemelhantesCoroutines()
+            viewModel.buscarFilmesSemelhantesCoroutines(idFilme)
         })
 
         viewModel.movieSimilarLiveData.observe(this, Observer {

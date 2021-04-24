@@ -1,4 +1,4 @@
-package com.example.moviesdb.login
+package com.example.moviesdb.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +11,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_login, LoginFragment.newInstance())
+                    .replace(R.id.container_login,
+                        LoginFragment.newInstance()
+                    )
                     .commitNow()
         }
     }

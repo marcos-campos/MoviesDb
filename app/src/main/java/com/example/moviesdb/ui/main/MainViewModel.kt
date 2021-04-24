@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
 import com.example.moviesdb.model.MovieSimilarResponse
+import com.example.moviesdb.modelListaFilmes.ListaFilmes
 import com.example.moviesdb.repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,12 +22,12 @@ class MainViewModel : ViewModel() {
     val loadingFilmesSemelhantes = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 
-    fun buscarFilmesCoroutines(){
+    fun buscarFilmesCoroutines(idFilme: Int){
         CoroutineScope(Dispatchers.IO).launch {
             loadingFilmes.postValue(true)
 
             try {
-                repository.buscarFilmeApi().let {
+                repository.buscarFilmeApi(idFilme).let {
                     movieLiveData.postValue(it)
                     loadingFilmes.postValue(false) }
             }
@@ -38,12 +39,12 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun buscarFilmesSemelhantesCoroutines(){
+    fun buscarFilmesSemelhantesCoroutines(idFilme: Int){
         CoroutineScope(Dispatchers.IO).launch {
             loadingFilmesSemelhantes.postValue(true)
 
             try {
-                repository.buscarFilmesSemelhantesApi().let {
+                repository.buscarFilmesSemelhantesApi(idFilme).let {
                     movieSimilarLiveData.postValue((it.results as ArrayList<MovieSimilarResponse>?)!!)
                     loadingFilmesSemelhantes.postValue(false) }
             }
