@@ -2,7 +2,7 @@ package com.example.moviesdb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.moviesdb.modelListaFilmes.Item
+import com.example.moviesdb.model.Item
 import com.example.moviesdb.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {

@@ -1,11 +1,9 @@
 package com.example.moviesdb.repository
 
-import androidx.appcompat.app.AppCompatActivity
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
 import com.example.moviesdb.model.MovieSimilar
-import com.example.moviesdb.modelListaFilmes.Item
-import com.example.moviesdb.modelListaFilmes.ListaFilmes
+import com.example.moviesdb.model.ListaFilmes
 import com.example.moviesdb.network.EndPoints
 import com.example.moviesdb.network.RetrofitInit
 

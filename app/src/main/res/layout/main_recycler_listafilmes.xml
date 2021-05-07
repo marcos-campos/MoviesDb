@@ -4,30 +4,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="360dp"
+    android:layout_height="380dp"
     android:background="@color/black">
 
     <TextView
+        android:id="@+id/recycler_listafilmes_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        tools:text="Wonder Woman"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/card_view_listafilmes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="monospace"
-        android:textSize="19sp"
-        android:id="@+id/recycler_listafilmes_titulo"/>
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_listafilmes"
+        tools:text="Wonder Woman" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_listafilmes"
-        android:layout_width="170dp"
+        android:layout_width="250dp"
         app:cardCornerRadius="5dp"
-        android:layout_height="255dp"
+        android:layout_height="310dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="parent"

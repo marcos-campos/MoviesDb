@@ -1,4 +1,4 @@
-package com.example.moviesdb.modelListaFilmes
+package com.example.moviesdb.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

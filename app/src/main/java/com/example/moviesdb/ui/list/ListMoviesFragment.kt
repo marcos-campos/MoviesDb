@@ -5,21 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
-import com.example.moviesdb.adapter.AdapterFilmesSemelhantes
 import com.example.moviesdb.adapter.AdapterListaFilmes
-import com.example.moviesdb.model.MovieSimilarResponse
-import com.example.moviesdb.modelListaFilmes.Item
-import com.example.moviesdb.modelListaFilmes.ListaFilmes
-import com.example.moviesdb.ui.main.MainFragment
-import com.example.moviesdb.ui.main.MainViewModel
-import com.squareup.picasso.Picasso
+import com.example.moviesdb.model.Item
 
 class ListMoviesFragment : Fragment() {
 

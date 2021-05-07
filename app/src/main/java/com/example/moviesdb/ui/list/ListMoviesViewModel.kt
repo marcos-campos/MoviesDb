@@ -2,7 +2,7 @@ package com.example.moviesdb.ui.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviesdb.modelListaFilmes.ListaFilmes
+import com.example.moviesdb.model.ListaFilmes
 import com.example.moviesdb.repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

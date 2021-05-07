@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
 import com.example.moviesdb.model.MovieSimilarResponse
-import com.example.moviesdb.modelListaFilmes.ListaFilmes
 import com.example.moviesdb.repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

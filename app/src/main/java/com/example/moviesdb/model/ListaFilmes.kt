@@ -1,5 +1,6 @@
-package com.example.moviesdb.modelListaFilmes
+package com.example.moviesdb.model
 
+import com.example.moviesdb.model.Item
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

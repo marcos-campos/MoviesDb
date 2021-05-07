@@ -3,7 +3,7 @@ package com.example.moviesdb.network
 import com.example.moviesdb.model.GenresResponse
 import com.example.moviesdb.model.Movie
 import com.example.moviesdb.model.MovieSimilar
-import com.example.moviesdb.modelListaFilmes.ListaFilmes
+import com.example.moviesdb.model.ListaFilmes
 import retrofit2.http.GET
 import retrofit2.http.Path
 
