@@ -25,7 +25,7 @@ class RepositoryApi {
 
     suspend fun buscarGenerosApi(): GenresResponse = conectionService.buscarGeneros()
 
-    suspend fun buscarListaDeFilmesApi(): ListaFilmes = conectionService.buscarListaDeFilmes(1)
+    suspend fun buscarListaDeFilmesApi(list_id: Int = 1): ListaFilmes = conectionService.buscarListaDeFilmes(list_id)
 }
 
 

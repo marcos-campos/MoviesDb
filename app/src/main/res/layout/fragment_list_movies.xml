@@ -10,23 +10,141 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista de Filmes"
+        android:text="Movies Db"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
-        android:fontFamily="monospace"
-        android:textSize="20sp"
+        android:fontFamily="casual"
+        android:textSize="28dp"
         android:id="@+id/tv_titulo_listafilmes"
         android:textColor="@color/white"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="650dp"
-        android:id="@+id/recycler_list"
-        app:layout_constraintTop_toBottomOf="@id/tv_titulo_listafilmes"
+        android:layout_height="290dp"
+        android:src="@drawable/wonder_woman_background"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo_listafilmes"/>
+
+    <View
+        android:id="@+id/opacityFilter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_listafilmes"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_list"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.7"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo!"
+        android:textColor="@color/white"
+        android:fontFamily="casual"
+        android:id="@+id/welcome"
+        android:textSize="26dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_listafilmes"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/milhoes"
+        android:layout_marginTop="30dp"
+        android:paddingStart="30dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="casual"
+        android:textSize="26dp"
+        android:text="Milhões de filmes e séries para descobrir"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Explore já"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/milhoes"
+        android:layout_marginStart="30dp"
+        android:textSize="26dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/explore"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:hint="Buscar por filme, série"
+        android:paddingStart="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/explore" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        app:layout_constraintEnd_toEndOf="@+id/search"
+        app:layout_constraintTop_toTopOf="@+id/search"
+        android:text="Search"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbar"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/img01"
+        android:src="@drawable/ic_tv_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img02"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_tv_monitor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img03"
+        app:layout_constraintStart_toEndOf="@+id/img01" />
+
+    <ImageView
+        android:id="@+id/img03"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/ic_tv_screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

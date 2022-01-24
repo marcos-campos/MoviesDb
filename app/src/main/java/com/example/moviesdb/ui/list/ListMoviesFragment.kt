@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.R
+import com.example.moviesdb.RecyclerScrollListener
 import com.example.moviesdb.adapter.AdapterListaFilmes
 import com.example.moviesdb.model.Item
 
@@ -17,6 +18,12 @@ class ListMoviesFragment : Fragment() {
 
     private var listaDeFilmes = mutableListOf<Item>()
     val recycler1 by lazy {view?.findViewById<RecyclerView>(R.id.recycler_list)}
+
+    private val recyclerScrollListener by lazy {
+        RecyclerScrollListener {
+            viewModel.buscarNovaListaDeFilmes()
+        }
+    }
 
     companion object {
         fun newInstance() = ListMoviesFragment()
@@ -39,9 +46,19 @@ class ListMoviesFragment : Fragment() {
 
         viewModel.buscarListaDeFilmesCoroutines()
 
-        recycler1?.layoutManager = LinearLayoutManager(activity)
+//        recycler1?.layoutManager = LinearLayoutManager(activity)
+
+
+        val linearLayout = LinearLayoutManager(activity)
+        linearLayout.orientation = LinearLayoutManager.HORIZONTAL
+        recycler1?.layoutManager = linearLayout
+
+        recycler1?.addOnScrollListener(recyclerScrollListener)
 
         viewModel.listaFilmesLiveData.observe(this, Observer {
+
+            recyclerScrollListener.setRequestingNextPage(false)
+
             it.items?.let { it1 -> listaDeFilmes.addAll(it1) }
 
             val adapter = activity?.let { AdapterListaFilmes(listaDeFilmes, it) }

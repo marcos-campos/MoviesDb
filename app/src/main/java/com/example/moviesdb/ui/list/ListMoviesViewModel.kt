@@ -15,11 +15,35 @@ class ListMoviesViewModel : ViewModel() {
     val repository = RepositoryApi()
     val errorMessage = MutableLiveData<String>()
 
+    var nextPage = 0
+
     fun buscarListaDeFilmesCoroutines(){
         CoroutineScope(Dispatchers.IO).launch {
 
             try {
-                repository.buscarListaDeFilmesApi().let {
+                repository.buscarListaDeFilmesApi(1).let {
+//                    atualizarPaginacao(it.id?.toInt())
+                    listaFilmesLiveData.postValue(it)
+                }
+            }
+
+            catch (error: Throwable) {
+                enviarErro(error)
+            }
+        }
+    }
+
+    fun atualizarPaginacao(id: Int?) {
+        nextPage = id?.plus(1) ?: 1
+    }
+
+    fun buscarNovaListaDeFilmes(){
+        CoroutineScope(Dispatchers.IO).launch {
+
+            try {
+                atualizarPaginacao(nextPage)
+                repository.buscarListaDeFilmesApi(nextPage).let {
+                    atualizarPaginacao(it.id?.toInt())
                     listaFilmesLiveData.postValue(it)
                 }
             }

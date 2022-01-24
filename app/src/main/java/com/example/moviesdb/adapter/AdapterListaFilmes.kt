@@ -24,8 +24,8 @@ class AdapterListaFilmes (
 
     override fun onBindViewHolder(holder: ViewHolderListaFilmes, position: Int) {
 
-        val nomeDoFilme = holder.nomeFilme
-        nomeDoFilme.text = listaFilmes[position].title.toString()
+//        val nomeDoFilme = holder.nomeFilme
+//        nomeDoFilme.text = listaFilmes[position].title.toString() + " " + position
 
         val baseUrl = "https://image.tmdb.org/t/p/"
         val tamanhoImage = "w500/"
